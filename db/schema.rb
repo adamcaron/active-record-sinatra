@@ -11,6 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+# This file is essentially a read-only file. It gets changed through creating new migrations and editing the migration file.
+
 ActiveRecord::Schema.define(version: 20150713194739) do
 
   create_table "tasks", force: :cascade do |t|
