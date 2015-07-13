@@ -11,13 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-# This file is essentially a read-only file. It gets changed through creating new migrations and editing the migration file.
-
-ActiveRecord::Schema.define(version: 20150713194739) do
+ActiveRecord::Schema.define(version: 20150713205436) do
 
   create_table "tasks", force: :cascade do |t|
     t.text     "title"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.text     "first_name"
+    t.text     "last_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
