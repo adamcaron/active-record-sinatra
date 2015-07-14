@@ -29,6 +29,6 @@ class CreateTaskTest < Minitest::Test
     post '/tasks', { task: { description: "else", user_id: 1 } }
     assert_equal 0, Task.count
     assert_equal 403, last_response.status
-    assert_equal "missing title", last_response.body
+    assert_equal "Title can't be blank", last_response.body
   end
 end

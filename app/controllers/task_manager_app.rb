@@ -17,9 +17,16 @@ class TaskManager < Sinatra::Base
     else
       # if the ruby object is not valid, return status 403 and body message
       status 403 # status(403) ... just a method with params
-      body   "missing title"
+      body   task.errors.full_messages.join(", ") # full_messages returns an array, so this takes separates those elements with commas
     end
   end
+
+  # Refactor:
+  # post '/tasks' do
+  #   task_creator = TaskCreator.new(params[:task])
+  #   status task_creator.status
+  #   body   task_creator.body
+  # end
 
   # Ruby Land
   # task.new doesn't give it an id because it doesn't save it in the database.
