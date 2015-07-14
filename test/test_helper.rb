@@ -11,4 +11,4 @@ require 'capybara'
 Capybara.app = TaskManager
 
 require 'database_cleaner'
-DadabaseCleaner.strategy = :truncation, {except: %w[public.schema_migrations]}
+DatabaseCleaner.strategy = :truncation, {except: %w[public.schema_migrations]}

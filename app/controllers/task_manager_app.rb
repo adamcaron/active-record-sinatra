@@ -8,4 +8,9 @@ class TaskManager < Sinatra::Base
     @users = User.all
     erb :users_index
   end
+
+  post '/tasks' do
+    Task.create(params[:task])
+    "created!"
+  end
 end
