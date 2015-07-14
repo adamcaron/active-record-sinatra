@@ -23,4 +23,12 @@ class CreateTaskTest < Minitest::Test
     assert_equal 200, last_response.status
     assert_equal "created!", last_response.body
   end
+
+  # What if someone tries to create a task without a title? (create a resource without the required parameters). Let's validate the data.
+  def test_cannot_create_a_task_without_a_title
+    post '/tasks', { task: { description: "else", user_id: 1 } }
+    assert_equal 0, Task.count
+    assert_equal 403, last_response.status
+    assert_equal "missing title", last_response.body
+  end
 end
