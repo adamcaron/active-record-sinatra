@@ -10,4 +10,6 @@ group :development, :test do # group is used by bundler if you specify which gro
   gem 'minitest'
   gem 'tux' # allows us console interaction to our database, more readable interaction method than the binary in a sqlite db text file
   gem 'capybara'
+  gem 'rack-test'
+  gem 'database_cleaner'
 end
